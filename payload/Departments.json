@@ -1,0 +1,9 @@
+[{
+  "_id": 1,
+  "name": "Account",
+  "_class": "com.marcelo.mongodbspringboot.api.entities.DepartmentEntity"
+},{
+  "_id": 2,
+  "name": "Financial",
+  "_class": "com.marcelo.mongodbspringboot.api.entities.DepartmentEntity"
+}]
