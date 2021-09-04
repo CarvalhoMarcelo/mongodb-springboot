@@ -1,4 +1,4 @@
-[{
+{
   "id": 2,
   "userId": "jcarlos",
   "password": "abcde",
@@ -7,7 +7,9 @@
   "birthDate": "1990-09-01",
   "passport": "XX9999",
   "departmentId": 999
-},{
+}
+
+{
   "id": 1,
   "userId": "mcarvalho",
   "password": "abcde",
@@ -16,7 +18,9 @@
   "birthDate": "1990-09-01",
   "passport": "XX9999",
   "departmentId": 123
-},{
+}
+
+{
   "id": 3,
   "userId": "lcardoso",
   "password": "xxxx",
@@ -25,7 +29,9 @@
   "birthDate": "1980-07-20",
   "passport": "XX9999",
   "departmentId": 888,
-},{
+}
+
+{
   "id": 4,
   "userId": "camaral",
   "password": "sss",
@@ -34,4 +40,4 @@
   "birthDate": "1980-06-21",
   "passport": "cc5555",
   "departmentId": 888
-}]
+}
