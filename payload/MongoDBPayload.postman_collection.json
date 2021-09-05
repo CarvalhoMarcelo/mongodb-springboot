@@ -145,7 +145,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 2,\r\n  \"name\" : \"Financial\"\r\n}",
+							"raw": "{\r\n        \"id\": 888,\r\n        \"name\": \"Sales\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -200,7 +200,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 2,\r\n  \"name\" : \"Financial\"\r\n}",
+							"raw": " {\r\n        \"id\": 1,\r\n        \"name\": \"Account\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -273,7 +273,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8090/company/listUsersByDepartment/888",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"company",
+								"listUsersByDepartment",
+								"888"
+							]
+						}
 					},
 					"response": []
 				},
@@ -282,7 +294,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8090/company/listDepartByUser/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"company",
+								"listDepartByUser",
+								"4"
+							]
+						}
 					},
 					"response": []
 				}

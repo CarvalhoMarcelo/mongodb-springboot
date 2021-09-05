@@ -1,9 +1,18 @@
-{
-  "id": 1,
-  "name": "Account"
-}
-
-{
-  "id": 2,
-  "name": "Financial"
-}
+[
+    {
+        "id": 1,
+        "name": "Account"
+    },
+    {
+        "id": 2,
+        "name": "Financial"
+    },
+    {
+        "id": 999,
+        "name": "Manufacturing"
+    },
+    {
+        "id": 888,
+        "name": "Sales"
+    }
+]

@@ -20,7 +20,7 @@ public class UserEntity {
     private String surname;
     private Date birthDate;
     private String passport;
-    private Integer departmentId;
+    private Long departmentId;
 
 
 }
