@@ -55,3 +55,8 @@ Department endpoints:
 (GET)    http://localhost:8090/department/findDepartment/2
 (GET)    http://localhost:8090/department/listDepartments
 ```
+Company endpoints:
+```
+(GET)    http://localhost:8090/company/listUsersByDepartment/888
+(GET)    http://localhost:8090/company/listDepartByUser/4
+```
