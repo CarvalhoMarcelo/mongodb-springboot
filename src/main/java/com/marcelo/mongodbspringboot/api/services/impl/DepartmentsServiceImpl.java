@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.logging.Logger;
 
 @Service
-public class DepartmentsServiceImpl implements DepartmentsService {
+public class DepartmentsServiceImpl implements DepartmentsService{
 
     @Autowired
     DepartmentRepository departmentRepository;
@@ -22,6 +22,7 @@ public class DepartmentsServiceImpl implements DepartmentsService {
     @Autowired
     DepartmentMapper departmentMapper;
 
+    @Override
     public Optional<DepartmentDTO> addDepartment(DepartmentEntity departmentEntity) {
 
         try {
@@ -33,6 +34,7 @@ public class DepartmentsServiceImpl implements DepartmentsService {
 
     }
 
+    @Override
     public boolean delDepartment(Long id) {
 
         try {
@@ -46,6 +48,7 @@ public class DepartmentsServiceImpl implements DepartmentsService {
 
     }
 
+    @Override
     public Optional<DepartmentDTO> updateDepartment(DepartmentEntity departmentEntity) {
 
         try {
@@ -57,6 +60,7 @@ public class DepartmentsServiceImpl implements DepartmentsService {
 
     }
 
+    @Override
     public Optional<DepartmentDTO> findById(Long id) {
 
         try {
@@ -72,6 +76,7 @@ public class DepartmentsServiceImpl implements DepartmentsService {
 
     }
 
+    @Override
     public List<DepartmentDTO> findAll() {
 
         try{

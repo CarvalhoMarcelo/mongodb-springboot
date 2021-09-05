@@ -22,6 +22,7 @@ public class UsersServiceImpl implements UsersService {
     @Autowired
     UserMapper userMapper;
 
+    @Override
     public Optional<UserDTO> addUser(UserEntity userEntity) {
 
         try {
@@ -33,6 +34,7 @@ public class UsersServiceImpl implements UsersService {
 
     }
 
+    @Override
     public boolean delUser(Long id) {
 
         try {
@@ -46,6 +48,7 @@ public class UsersServiceImpl implements UsersService {
 
     }
 
+    @Override
     public Optional<UserDTO> updateUser(UserEntity userEntity) {
 
         try {
@@ -57,6 +60,7 @@ public class UsersServiceImpl implements UsersService {
 
     }
 
+    @Override
     public Optional<UserDTO> findById(Long id) {
 
         try {
@@ -72,6 +76,7 @@ public class UsersServiceImpl implements UsersService {
 
     }
 
+    @Override
     public List<UserDTO> findAll() {
 
         try{

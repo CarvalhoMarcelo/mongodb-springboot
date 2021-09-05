@@ -2,6 +2,7 @@ package com.marcelo.mongodbspringboot.api.controllers;
 
 import com.marcelo.mongodbspringboot.api.dtos.DepartmentDTO;
 import com.marcelo.mongodbspringboot.api.entities.DepartmentEntity;
+import com.marcelo.mongodbspringboot.api.services.DepartmentsService;
 import com.marcelo.mongodbspringboot.api.services.impl.DepartmentsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -19,7 +20,7 @@ public class DepartmentsController {
 
 
     @Autowired
-    DepartmentsServiceImpl departmentsServiceImpl;
+    DepartmentsService departmentsService;
 
     @RequestMapping(value = "/addDepartment",
                     method = RequestMethod.POST,
@@ -28,12 +29,12 @@ public class DepartmentsController {
     @ResponseBody
     public ResponseEntity<DepartmentDTO> addDepartment(@RequestBody DepartmentEntity departmentEntity) {
 
-        if(departmentsServiceImpl.findById(departmentEntity.getId()).isPresent()){
+        if(departmentsService.findById(departmentEntity.getId()).isPresent()){
             return new ResponseEntity("Department id: " + departmentEntity.getId() + " already exist! Please use the updateDepartment method!",
                                        HttpStatus.NOT_ACCEPTABLE);
         }
 
-        Optional<DepartmentDTO> departmentDTO = departmentsServiceImpl.addDepartment(departmentEntity);
+        Optional<DepartmentDTO> departmentDTO = departmentsService.addDepartment(departmentEntity);
 
         if(departmentDTO.isEmpty()) {
             return new ResponseEntity("Error creating Department!", HttpStatus.NO_CONTENT);
@@ -50,12 +51,12 @@ public class DepartmentsController {
     @ResponseBody
     public ResponseEntity<DepartmentDTO> updateDepartment(@RequestBody DepartmentEntity departmentEntity) {
 
-        if(departmentsServiceImpl.findById(departmentEntity.getId()).isEmpty()){
+        if(departmentsService.findById(departmentEntity.getId()).isEmpty()){
             return new ResponseEntity("Department id: " + departmentEntity.getId() + " do not exist! Please use the addDepartment method!",
                     HttpStatus.NOT_ACCEPTABLE);
         }
 
-        Optional<DepartmentDTO> departmentDTO = departmentsServiceImpl.updateDepartment(departmentEntity);
+        Optional<DepartmentDTO> departmentDTO = departmentsService.updateDepartment(departmentEntity);
 
         if(departmentDTO.isEmpty()) {
             return new ResponseEntity("Error updating Department id: " + departmentEntity.getId(), HttpStatus.NOT_MODIFIED);
@@ -71,12 +72,12 @@ public class DepartmentsController {
     @ResponseBody
     public ResponseEntity<DepartmentDTO> delDepartment(@Param("id") Long id) {
 
-        if(departmentsServiceImpl.findById(id).isEmpty()){
+        if(departmentsService.findById(id).isEmpty()){
             return new ResponseEntity("Department id: " + id + " do not exist!",
                     HttpStatus.NOT_ACCEPTABLE);
         }
 
-        if(!departmentsServiceImpl.delDepartment(id)) {
+        if(!departmentsService.delDepartment(id)) {
             return new ResponseEntity("Error deleting Department!", HttpStatus.NO_CONTENT);
         } else {
             return new ResponseEntity("Department with id: " + id + " successful deleted!", HttpStatus.OK);
@@ -90,7 +91,7 @@ public class DepartmentsController {
     @ResponseBody
     public ResponseEntity<DepartmentDTO> findDepartment(@PathVariable("departmentId") Long id) {
 
-        Optional<DepartmentDTO> departmentDTO = departmentsServiceImpl.findById(id);
+        Optional<DepartmentDTO> departmentDTO = departmentsService.findById(id);
 
         if(departmentDTO.isEmpty()) {
             return new ResponseEntity("Department id: " + id + " not found!", HttpStatus.NO_CONTENT);
@@ -106,7 +107,7 @@ public class DepartmentsController {
     @ResponseBody
     public ResponseEntity<List<DepartmentDTO>> listDepartments() {
 
-        List<DepartmentDTO> departmentDTOList = departmentsServiceImpl.findAll();
+        List<DepartmentDTO> departmentDTOList = departmentsService.findAll();
 
         if(departmentDTOList.isEmpty()) {
             return new ResponseEntity("No Departments found. List is empty!", HttpStatus.NO_CONTENT);
